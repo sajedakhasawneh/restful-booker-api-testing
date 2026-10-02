@@ -1,0 +1,291 @@
+{
+  "info": {
+    "_postman_id": "85b43e77-b279-4bd5-9835-5bf30952c936",
+    "name": "BookingAPIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58038195",
+    "_collection_link": "https://go.postman.co/collection/58038195-85b43e77-b279-4bd5-9835-5bf30952c936?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GetBookingIds",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/booking/3",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "booking",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateBooking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstname\" : \"Judy\",\n    \"lastname\" : \"Abbott\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2026-13-01\",\n        \"checkout\" : \"2026-15-11\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/booking",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "booking"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UpdateBooking",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Cookie",
+            "value": "token={{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstname\" : \"James\",\n    \"lastname\" : \"Brown\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2018-01-01\",\n        \"checkout\" : \"2019-01-01\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/booking/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "booking",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateToken",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://restful-booker.herokuapp.com/auth",
+          "protocol": "https",
+          "host": [
+            "restful-booker",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "auth"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PartialUpdateBooking",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Cookie",
+            "value": "token={{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstname\" : \"James\",\n    \"lastname\" : \"Brown\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/booking/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "booking",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DeleteBooking",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Cookie",
+            "value": "token={{token}}"
+          },
+          {
+            "key": "Authorization",
+            "value": "YWRtaW46cGFzc3dvcmQxMjM",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/booking/3750",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "booking",
+            "3750"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetAllBooking",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/booking?lastname=Brown",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "booking"
+          ],
+          "query": [
+            {
+              "key": "checkin",
+              "value": "2023-08-25",
+              "disabled": true
+            },
+            {
+              "key": "checkout",
+              "value": "2024-03-11",
+              "disabled": true
+            },
+            {
+              "key": "firstname",
+              "value": "Mary",
+              "disabled": true
+            },
+            {
+              "key": "lastname",
+              "value": "Brown"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          "\r",
+          "const apiName = pm.info.requestName;\r",
+          "const httpMethod = pm.request.method;\r",
+          "const statusCode = pm.response.code;\r",
+          "\r",
+          "\r",
+          "// ⏱️ Response Time Assertion (Threshold: 2000ms = 2 seconds)\r",
+          "pm.test(\"Response time is acceptable (under 2000ms)\", function () {\r",
+          "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+          "});\r",
+          "\r",
+          "// 🛡️️ 2. Server Error Safety Check (Ensures NO 5xx Server Errors)\r",
+          "pm.test(\"Server is healthy (No 5xx Server Errors)\", function () {\r",
+          "    pm.response.to.not.have.status(500);\r",
+          "    pm.response.to.not.have.status(502);\r",
+          "    pm.response.to.not.have.status(503);\r",
+          "});\r",
+          "\r",
+          "// 2. تحديد الـ Status Code المتوقع تلقائياً بناءً على نوع الـ Request\r",
+          "let expectedStatuses = [200]; // Default for GET, PUT, PATCH\r",
+          "\r",
+          "if (httpMethod === 'POST') {\r",
+          "    expectedStatuses = [200, 201];\r",
+          "} else if (httpMethod === 'DELETE') {\r",
+          "    expectedStatuses = [200, 201, 204];\r",
+          "}\r",
+          "\r",
+          "// 3. طباعة اسم الـ API والـ Method والـ Code في نتيجة الفحص تلقائياً\r",
+          "pm.test(`[${httpMethod}] ${apiName} -> Returned Status: ${statusCode}`, function () {\r",
+          "    pm.expect(expectedStatuses).to.include(statusCode);\r",
+          "});"
+        ],
+        "type": "text/javascript"
+      }
+    }
+  ]
+}
